@@ -1,0 +1,652 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'SF-Regular', 'Helvetica Neue', Arial, sans-serif;
+
+}
+
+/* ----------------------- */
+
+.arrow-btn{
+  @apply bg-gray-300 p-1
+}
+
+/* Responsive Hidden CSS */
+
+.res-640-hidden{
+  @apply sm:block hidden
+}
+
+.res-768-hidden{
+  @apply md:block hidden
+}
+
+.res-1024-hidden{
+  @apply lg:block hidden
+}
+
+/* ---------------------------------------------------------- */
+
+.over-flow{
+  @apply overflow-x-auto border border-gray-300 rounded-xl
+}
+
+.copy-right{
+    @apply text-[#FFFFFF] text-center pt-6 text-[12px]
+}
+
+.header-text-detail{
+    @apply flex gap-2 items-center
+}
+
+.header-icon{
+    @apply mt-[3px] text-[#FFFFFF]
+}
+
+.header-text-size{
+    @apply text-[16px] text-[#FFFFFF]
+}
+
+.logo{
+    @apply md:w-52 w-36;
+}
+
+.header-section-slrc{
+    @apply md:flex hidden flex-wrap gap-4 items-center
+}
+
+.header-section-slrc-b{
+    @apply flex flex-wrap gap-4 items-center md:mt-0 mt-2
+ 
+}
+
+.header-btns{
+    @apply w-[107px] h-[37px] bg-[#78222E] text-white border border-white rounded text-[17.86px] font-medium
+}
+
+.login-input-div{
+    @apply border-b p-1 flex justify-between
+}
+
+
+
+/* Home Page Section */
+
+/* In your CSS file (e.g., styles.css or a Tailwind CSS file) */
+.home-main {
+    @apply h-screen w-full bg-cover bg-center bg-no-repeat;
+    background-image: url('./assets/house.png'); /* Replace with your static image path */
+  }
+  
+  .home-content{
+    @apply flex flex-col justify-center md:items-start items-center h-full space-y-8 md:pl-24
+  }
+
+  .home-content h1{
+    @apply md:text-[60px] text-[35px] md:w-[480px] text-center md:text-start w-full text-[#FFFFFF] font-bold 
+  }
+
+  .home-content p{
+    @apply text-[#FFFFFF] md:w-[460px] text-center md:text-start
+  }
+
+  .home-btn-main{
+    @apply flex bg-[#78222E] text-white w-44 h-10 justify-center items-center gap-2
+  }
+
+  .home-btn-main hr{
+    @apply w-10
+  }
+
+
+  /* Login Page CSS */
+
+  .login-main-imgbg {
+    @apply h-screen w-full bg-cover bg-center bg-no-repeat;
+    background-image: url('./assets/login.png'); /* Replace with your static image path */
+  }
+
+  .login-main{
+    @apply flex justify-center items-center h-full
+  }
+
+  .login-main-widin{
+    @apply bg-white/30 backdrop-blur-lg border p-8 rounded-3xl shadow-lg w-full sm:w-[480px]
+  }
+
+  .login-main-widin h2{
+    @apply text-2xl text-[#FFFFFF] font-bold text-center mb-6
+  }
+
+  .login-form{
+    @apply flex flex-col gap-4
+  }
+
+  .login-input{
+    @apply outline-none bg-transparent text-[#FFFFFF] font-normal
+  }
+
+  .login-input-lable{
+    @apply text-[#FFFFFF] font-normal
+  }
+
+  .forgot-pass-btn{
+    @apply text-[#FFFFFF] underline text-right text-[12px]
+  }
+
+  .login-submit-btn{
+    @apply p-2 bg-[#78222E] shadow-bottom mt-10 text-[#FFFFFF] font-medium rounded-lg
+  }
+  /* SignUp CSS */
+
+  .signup-main-img{
+    @apply min-h-screen flex items-center justify-center bg-cover bg-center;
+    background-image: url('./assets/signuphouse.png'); /* Replace with your static image path */
+  }
+
+  .signup-glassmorphics-container {
+    @apply bg-white/30 border-t border-l backdrop-blur-md rounded-xl shadow-lg p-8  max-w-3xl
+  }
+
+  .signup-glassmorphics-container h2{
+    @apply text-2xl font-semibold text-white text-center mb-6
+  }
+
+  .signup-form{
+    @apply space-y-6
+  }
+
+  .signup-form-row{
+    @apply grid grid-cols-1 sm:grid-cols-2 gap-4
+  }
+
+  .signup-lable{
+    @apply block text-sm  text-white mb-2
+  }
+
+  .signup-input{
+    @apply  w-full p-[6px] bg-[#FFFFFF99]/[60%] text-[#6F6F6F] rounded outline-none
+}
+
+.signup-submit{
+    @apply flex justify-center items-center
+}
+
+.signup-submit button{
+    @apply w-[500px] py-[7px] bg-[#78222E] text-white font-medium rounded-lg
+}
+
+/* Footer CSS */
+
+.footer-main{
+  @apply py-4 w-full bg-[#1A1A1A] h-auto flex flex-wrap md:justify-between justify-center items-center md:px-24 
+}
+
+.footer-right{
+  @apply flex flex-wrap text-white items-center md:gap-4 gap-2 text-[12px] 
+}
+
+
+/* Total file CSS */
+
+.total-main{
+  @apply grid xl:grid-cols-5 md:grid-cols-2 sm:grid-cols-3 grid-cols-1 lg:grid-cols-4 gap-6 justify-between
+}
+
+.box-container-total{
+  @apply xl:w-48 h-24 lg:w-44 w-full shadow-lg rounded-lg flex justify-center gap-6 items-center
+}
+
+.total-value{
+  @apply text-2xl font-extrabold text-gray-600
+}
+
+.total-value-text{
+  @apply text-sm text-gray-500
+}
+
+.total-icon{
+  @apply w-14 h-14 bg-[#78222E17] rounded-full flex justify-center items-center text-[#78222E]
+}
+
+
+/* SideBar CSS */
+
+.sidebar-main-container{
+  @apply  h-screen w-[20%] fixed shadow-xl  text-white flex flex-col
+}
+
+.sidebar-logo{
+  @apply pl-8 pt-4
+}
+
+.sidebar-menu{
+  @apply flex-1 pt-6 overflow-y-auto
+}
+
+.sidebar-parent-menu{
+  @apply relative flex items-center justify-between w-full px-8 py-2 text-[#000000] hover:bg-[#78222E17] hover:text-[#78222E]
+}
+
+.side-menu-icon{
+  @apply flex items-center gap-3
+}
+
+.side-Simulated-border{
+@apply absolute left-0 top-0 h-full w-2 bg-[#78222E] scale-y-0 group-hover:scale-y-100 transition-transform origin-top rounded-tr-lg rounded-br-lg
+}
+
+.sidebar-submenu{
+  @apply ml-6 mt-1
+}
+
+.submenu-link{
+  @apply block p-2 px-[2.7rem] text-sm text-[#000000] hover:text-[#78222E] 
+}
+
+.sidebar-logout{
+  @apply text-[#000000] flex pl-8 gap-2 mb-12 cursor-pointer text-base
+}
+
+.side-logout-icon{
+  @apply mt-[2px]
+}
+
+/* Head File CSS */
+
+.head-main-container{
+  @apply flex items-center justify-between p-4 shadow-md  
+}
+
+.head-left{
+  @apply text-lg font-semibold text-gray-700 flex
+}
+
+.head-left-responsive{
+  @apply lg:hidden cursor-pointer
+}
+.head-right{
+  @apply flex items-center gap-4
+}
+
+.head-search{
+  @apply relative flex px-3 text-gray-400 py-2 sm:border rounded-full
+}
+
+.head-search-input{
+  @apply text-sm outline-none sm:block hidden
+}
+
+.head-search-icon{
+  @apply sm:border-l-2 sm:pl-1 
+}
+
+.notification{
+  @apply relative w-10 h-10 bg-gray-200 flex justify-center items-center rounded-full
+}
+
+.notification-icon{
+  @apply text-gray-600  cursor-pointer hover:text-gray-800
+}
+
+.notification-badge{
+  @apply absolute top-[11px] right-[10px] bg-red-500 text-white text-xs font-semibold rounded-full h-2 w-2 flex items-center justify-center
+}
+
+.head-pro{
+  @apply w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300
+}
+
+.head-pro-img{
+  @apply w-full h-full object-cover
+}
+
+/* MainLayout File Css */
+
+.mainlayout-container{
+  @apply lg:flex
+}
+
+.mainlayout-side{
+  @apply w-64 lg:block hidden 
+}
+
+.mainlayout-head-section{
+  @apply flex-1
+}
+
+/* About CSS */
+
+.about-main{
+  @apply flex flex-col gap-y-12 my-10
+}
+
+.about-flex-section{
+  @apply  flex justify-center items-center
+}
+
+.about-container{
+  @apply flex flex-col md:flex-row items-center md:px-0 px-4 md:gap-24 gap-2
+}
+
+.about-img-right{
+  @apply md:w-96
+}
+
+.about-left-text{
+  @apply md:max-w-xl text-center md:text-left
+}
+
+.about-left-text h1{
+  @apply text-4xl font-semibold text-[#000000] mb-4
+}
+
+.about-left-text p{
+  @apply text-[#000000] mb-4
+}
+
+.about-btn-section{
+  @apply flex py-2 px-4 justify-center items-center w-fit gap-4 border border-gray-400
+}
+
+.about-btn-section hr{
+  @apply w-10 border-t-2 border-[#000000]
+}
+
+.ab-section-2{
+  @apply  flex 
+}
+
+.about-oliver{
+  @apply  text-lg font-semibold
+}
+
+
+/* Projectinitiation CSS */
+
+/* (forms) Add common Files CSS (Comapany) */
+
+.add-main{
+  @apply fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50
+}
+
+.add-popup{
+  @apply bg-white w-full max-w-4xl max-h-fit h-[95%] overflow-y-auto rounded-xl shadow-lg
+}
+
+.add-pop-header{
+  @apply flex justify-between items-center rounded-t-xl bg-[#78222E] mb-4 p-3 text-white 
+}
+
+.add-heading{
+  @apply text-xl font-semibold
+}
+
+.add-btn-container{
+  @apply flex justify-end gap-3
+}
+
+.in-add-cancel-btn{
+  @apply bg-gray-300 text-gray-700 hover:bg-gray-400 px-4 py-1 rounded-lg 
+}
+
+.in-add-confirm-btn{
+  @apply bg-[#78222E] text-white px-4 py-1 rounded-lg hover:bg-[#5c1a23]
+}
+
+.add-grid-container{
+  @apply grid sm:grid-cols-2 gap-4 mb-4
+}
+
+.add-lable{
+  @apply block text-sm font-medium text-gray-700 mb-1
+}
+
+.add-input{
+  @apply w-full border outline-none border-gray-300 rounded-lg p-2
+}
+
+
+/* Contract Add CSS */
+
+.contract-main{
+  @apply  rounded-md shadow-md
+}
+
+.contract-main h2{
+  @apply text-lg font-semibold py-2 rounded-t-md text-white bg-[#78222E] text-center mb-4
+}
+
+.contract-grid-container{
+  @apply grid sm:grid-cols-2 p-6 gap-4
+}
+
+.contract-boq{
+  @apply overflow-x-auto p-6 
+}
+
+.contract-table-container{
+  @apply w-full border border-gray-300
+}
+
+.contract-tr{
+  @apply bg-gray-200
+}
+
+.contract-th{
+  @apply p-2 border
+}
+
+.contract-btn-container{
+  @apply flex justify-end space-x-4 p-6
+}
+
+.contract-hr{
+  @apply mt-5 mx-5
+}
+
+/* List common CSS */
+
+.list-header{
+  @apply flex flex-wrap gap-2 md:justify-between justify-center items-center sm:mb-6 mb-2
+}
+
+.list-heading{
+  @apply text-[20px] font-bold
+}
+
+.list-add-btn{
+  @apply bg-[#78222E]  flex justify-center items-center gap-1 text-white md:py-2 py-1 md:px-6 px-2 rounded-lg md:text-[18px] text-sm font-normal hover:bg-[#5c1a23]
+}
+
+.list-add-btn span{
+  @apply font-normal
+}
+
+.list-tab-btn{
+  @apply bg-[#78222E] flex w-fit justify-between items-center gap-4 text-white py-2  md:px-8 px-2 rounded-lg md:text-[17px] text-sm cursor-pointer font-normal
+}
+
+.list-table-head{
+  @apply overflow-x-auto bg-white shadow-lg rounded-xl w-full
+}
+
+.list-table-container{
+  @apply bg-[#78222E] text-[#FFFFFF] text-[15px]
+}
+
+.list-table{
+  @apply w-full text-left border-collapse
+}
+
+.list-tr{
+  @apply border-t text-gray-600
+}
+
+.list-th{
+  @apply py-3 px-2 font-normal 
+} 
+
+.list-img{
+  @apply w-10 h-10 object-cover rounded
+}
+
+.list-action{
+  @apply flex gap-2 items-center 
+}
+
+/* Select Project Dropdown */
+
+.dropdown-container-btn{
+@apply bg-gray-100 flex justify-center items-center text-gray-700 py-2  md:px-10 px-1 gap-4 rounded-lg md:text-[17px] text-[15px] font-normal
+}
+
+.dropdown-relative{
+  @apply relative
+}
+
+.dropdown-menu-container{
+  @apply absolute top-full mt-2 w-full bg-white shadow-lg rounded-lg border border-gray-200 z-10
+}
+
+.dropdown-menu-container ul{
+  @apply py-2
+}
+
+.dropdown-menu-container li{
+  @apply px-4 py-2 hover:bg-gray-100 cursor-pointer text-gray-700
+}
+
+/* send & upload button */
+
+.send-btn{
+  @apply text-white bg-green-500 px-6 py-2 rounded-lg
+}
+
+.upload-btn{
+  @apply text-white bg-gray-300 px-6 py-2 rounded-lg
+}
+
+.select-div{
+  @apply w-24 border border-gray-300 rounded-lg p-2
+}
+
+/* SetAuthority CSS */
+
+.form-container{
+  @apply p-6 space-y-6
+}
+
+.form-head{
+  @apply flex flex-col md:flex-row md:items-center gap-4
+}
+
+.form-lable{
+  @apply text-sm font-medium text-gray-700 md:w-1/4
+}
+
+.form-select-option{
+  @apply w-full md:w-1/2 p-[5px] border border-gray-300 rounded-lg outline-none bg-white
+}
+
+.form-heading{
+  @apply bg-[#78222E] p-3 text-[17px] text-white font-medium rounded-t-xl
+}
+
+
+.save-btn{
+  @apply bg-[#78222E] text-white px-6 py-2 rounded-lg hover:bg-[#5c1a23] text-sm font-medium
+}
+
+/* cashflow-Planning-warkprogress table common page css */
+
+.list-th-common{
+  @apply border border-gray-300 p-2 flex-nowrap font-medium
+}
+
+.tbody-td-cash{
+  @apply border border-gray-300 px-4 py-1
+}
+
+.year-month-row{
+  @apply border border-gray-300 px-4 py-2
+}
+
+.td-cash{
+  @apply border border-gray-300 px-4 py-6
+}
+
+.cashflow-heading{
+  @apply sm:text-left text-center text-xl font-semibold mb-4
+}
+
+.table-in-cashflow{
+  @apply table-auto border-collapse border border-gray-300 w-full
+}
+
+/* Plan Procurment CSS */
+
+.ammount-btn{
+  @apply bg-gray-100 border border-gray-200 px-3 py-2 font-semibold
+}
+
+
+
+/* table dropdown css */
+
+.dropdown-table-btn{
+  @apply flex items-center cursor-pointer
+}
+
+.dropdown-table-menu-head{
+  @apply absolute border left-1/2 -translate-x-1/2 bg-gray-100 text-gray-600 font-normal text-sm mt-4 shadow-lg rounded
+}
+
+.dropdown-table-menu-text{
+  @apply cursor-pointer p-2 text-left hover:bg-[#e1e1e1]
+}
+
+
+/* Pagination CSS */
+
+.pagi-container{
+  @apply flex items-center justify-center sm:space-x-10 space-x-2 py-6
+}
+
+.pagi-prev-btn{
+  @apply sm:px-4 px-1 sm:py-[11.5px] py-1 bg-gray-200 text-gray-600 hover:bg-gray-300
+}
+
+.pagi-dots{
+  @apply flex items-center space-x-2
+}
+
+.pagi-next-btn{
+  @apply sm:px-4 px-1 sm:py-[11.5px] py-1 bg-gray-400 text-gray-50 hover:bg-gray-300
+}
+
+
+
+.active {
+  @apply border-l-8 border-l-[#78222E] text-[#78222E] bg-[#78222E17];
+}
+
+.active-text{
+  @apply text-[#78222E]
+}
+
+/* Tabs */
+
+.list-tab-btn-all{
+  @apply bg-[#78222E] flex w-fit justify-center items-center gap-4 text-white py-2  md:px-8 px-2 rounded-lg md:text-[17px] text-sm cursor-pointer font-normal
+
+}
+
+.center-div{
+  @apply flex justify-center items-center mb-6
+}
