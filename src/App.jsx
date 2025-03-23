@@ -9,6 +9,8 @@ import Dashboard from './pages/dashboardscrees/dashboard/Dashboard';
 import UserList from './pages/dashboardscrees/projectinitiation/user/UserList';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import CreatorsAllList from './pages/dashboardscrees/projectinitiation/CreatorsAllList';
+import BrandsAllList from './pages/dashboardscrees/projectinitiation/user/BrandsAllList';
 
 const ProtectedRoute = ({ element }) => {
   const navigate = useNavigate();
@@ -34,8 +36,8 @@ function App() {
           <Route path='/signup' element={<ProtectedRoute element={<Signup />} />} />
           <Route path='/dashboard' element={<MainLayout />} >
             <Route index element={<Dashboard />} />
-            <Route path='creators' element={<UserList />} />
-            <Route path='brands' element={<UserList />} />
+            <Route path='creators' element={<CreatorsAllList />} />
+            <Route path='brands' element={<BrandsAllList />} />
           </Route>
         </Routes>
         <ToastContainer />

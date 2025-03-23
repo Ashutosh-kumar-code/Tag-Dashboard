@@ -40,7 +40,7 @@ const UserList = () => {
     <div className="">
       {/* Header */}
       <div className="list-header">
-        <h1 className="list-heading">3A User List</h1>
+        <h1 className="list-heading">Creators List</h1>
         <div className=' flex gap-4'>
           <div className="dropdown-relative">
             {/* Button */}
@@ -87,9 +87,9 @@ const UserList = () => {
               </div>
             )}
           </div>
-          <button onClick={handleUserModal}  className="list-add-btn">
+          {/* <button onClick={handleUserModal}  className="list-add-btn">
             Add User<Icons.add />
-          </button>
+          </button> */}
         </div>
       </div>
 
@@ -140,72 +140,8 @@ const UserList = () => {
         </table>
       </div>
 
-      {/* Responsive Cards */}
-      {/* <div className="grid gap-6 sm:grid-cols-2 grid-cols-1 md:hidden">
-  {users.map((user, id) => (
-    <Card
-      key={id}
-      
-      title={user.userName}
-      subtitle={`Project Access: ${user.projectAccess}`}
-      description={
-        <>
-          {user.email}
-          <br />
-          <Link
-            to={user.invitationLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-blue-500 hover:underline overflow-hidden"
-          >
-            {user.invitationLink}
-          </Link>
-          <br/>
-          <span className={`${user.status === 'Pending' ? "text-red-600":"text-green-500"} text-right`}>{user.status}</span>
-        </>
-      }
-      actions={[
-        {
-          label: <Icons.edit size={20} />,
-          className: ' mt-1',
-        },
-      ]}
-    />
-  ))}
-</div> */}
-
-      {/* Pagination */}
-      {/* <div className="pagi-container">
-      
-        <button
-          className="pagi-prev-btn"
-          aria-label="Previous"
-        >
-          <Icons.sliderarrowback />
-        </button>
-
-        
-        <div className="pagi-dots">
-          {[1, 2, 3, 4,'...',60].map((item) => (
-            <button
-              key={item}
-              className={`px-4 py-2 ${item === 2 ? "bg-[#78222E] text-white" : "bg-gray-200 text-gray-600"
-                }`}
-            >
-              {item}
-            </button>
-          ))}
-        </div>
-
-       
-        <button
-          className="pagi-next-btn"
-          aria-label="Next"
-        >
-          <Icons.sliderarrowgo />
-        </button>
-      </div> */}
-      <AddUser isOpen={adduserModal} onClose={handleClose} />
+    
+      {/* <AddUser isOpen={adduserModal} onClose={handleClose} /> */}
     </div>
   );
 };
