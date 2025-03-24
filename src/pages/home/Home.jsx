@@ -7,18 +7,15 @@ const Home = () => {
       {/* Content goes here */}
       <div className="home-content">
         <h1>
-          Construction of
-          private houses
+        Tag – Where Creativity Meets Community!
         </h1>
         <p>
-          All types of work - form designing and laying the foundations to
-          finishing and commissioning. Tight deadlines, reasonable prices,
-          free shipping.
+        Seamlessly share videos and stories, connect with your audience, and make every moment unforgettable.
         </p>
-        <div className="home-btn-main">
+        {/* <div className="home-btn-main">
           <button>Get a quote</button>
           <hr/>
-        </div>
+        </div> */}
       </div>
     </div>
   );

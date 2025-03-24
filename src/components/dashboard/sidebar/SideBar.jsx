@@ -31,6 +31,14 @@ const SideBar = () => {
         { name: "Brands", link: "brands" },
       ],
     },
+    {
+      name: "Posts Section",
+      icon: <Icons.settings />,
+      subMenu: [
+        { name: "Videos", link: "videos" },
+        { name: "Sorts", link: "sorts" },
+      ],
+    },
    
    
 

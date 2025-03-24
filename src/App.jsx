@@ -11,6 +11,8 @@ import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import CreatorsAllList from './pages/dashboardscrees/projectinitiation/CreatorsAllList';
 import BrandsAllList from './pages/dashboardscrees/projectinitiation/user/BrandsAllList';
+import VideoAllList from './pages/dashboardscrees/projectinitiation/VideoAllList';
+import VideoList from './pages/dashboardscrees/projectinitiation/VideoList';
 
 const ProtectedRoute = ({ element }) => {
   const navigate = useNavigate();
@@ -38,6 +40,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path='creators' element={<CreatorsAllList />} />
             <Route path='brands' element={<BrandsAllList />} />
+            <Route path='videos' element={<VideoAllList />} />
+            <Route path='sorts' element={<VideoList />} />
           </Route>
         </Routes>
         <ToastContainer />

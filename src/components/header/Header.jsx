@@ -13,7 +13,7 @@ const Header = () => {
         {/* Left Section */}
         <div className=" flex md:justify-center justify-between gap-4">
           {/* Logo */}
-          <div className='logo'>
+          <div className='logo mt-2'>
             <img src={assets.logo} alt="logo" />
           </div>
 
