@@ -23,7 +23,7 @@ const VideoAllList = () => {
         formData.append('title', title);
         formData.append('description', description);
         formData.append('category', category);
-        formData.append('type', type);
+        formData.append('type', "video");
         formData.append('creatorId', '67e016be9a50bd2709bbc2c2'); // Replace with dynamic creatorId
 
         try {
