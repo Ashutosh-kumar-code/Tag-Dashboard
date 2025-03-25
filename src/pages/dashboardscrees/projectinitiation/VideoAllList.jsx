@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../../config';
 
 const VideoAllList = () => {
     const [videoFile, setVideoFile] = useState(null);
@@ -27,7 +28,7 @@ const VideoAllList = () => {
         formData.append('creatorId', '67e016be9a50bd2709bbc2c2'); // Replace with dynamic creatorId
 
         try {
-            const response = await axios.post('http://localhost:5000/api/videos/post/creator', formData, {
+            const response = await axios.post(`${API_URL}/videos/post/creator`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' }
             });
 

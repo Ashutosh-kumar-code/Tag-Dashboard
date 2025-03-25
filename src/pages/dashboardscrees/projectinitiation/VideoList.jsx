@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { API_URL } from '../../../config';
 
 const VideoList = () => {
     const [videos, setVideos] = useState([]);
@@ -8,7 +9,7 @@ const VideoList = () => {
     useEffect(() => {
         const fetchVideos = async () => {
             try {
-                const response = await axios.get('http://localhost:5000/api/videos/all'); // Adjust API URL as needed
+                const response = await axios.get(`${API_URL}/videos/all`); // Adjust API URL as needed
                 setVideos(response.data);
                 setLoading(false);
             } catch (error) {

@@ -41,7 +41,8 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path='creators' element={<CreatorsAllList />} />
             <Route path='brands' element={<BrandsAllList />} />
-            <Route path='videos' element={<VideoallList />} />
+            {/* <Route path='videos' element={<VideoallList />} /> */}
+            <Route path='videos' element={<VideoAllList />} />
             <Route path='sorts' element={<VideoList />} />
           </Route>
         </Routes>
