@@ -31,22 +31,30 @@ const VideoList = () => {
                 <p>No videos found.</p>
             ) : (
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '20px' }}>
-                    {videos.map((video) => (
-                        <div key={video._id} style={{ border: '1px solid #ddd', padding: '10px', borderRadius: '8px' }}>
-                            <h3>{video.title}</h3>
-                            <p>{video.description}</p>
-                            <img src={video.thumbnailUrl} alt="Thumbnail" width="100%" height="150px" style={{ objectFit: 'cover' }} />
-                            {/* <video width="100%" controls>
-                                <source src={`http://localhost:5000${video.videoUrl}`} type="video/mp4" />
-                                Your browser does not support the video tag.
-                            </video> */}
-                            <video width="100%" controls>
-    <source src={`http://localhost:5000${video.videoUrl}`} type="video/mp4" />
-    Your browser does not support the video tag.
-</video>
+                    {videos.map((video) => {
+                        // 🔹 Ensure the video URL is absolute
+                        const videoSrc = video.videoUrl.startsWith("http") 
+                            ? video.videoUrl 
+                            : `${API_URL}${video.videoUrl}`;  // API_URL should point to your backend
 
-                        </div>
-                    ))}
+                        return (
+                            <div key={video._id} style={{ border: '1px solid #ddd', padding: '10px', borderRadius: '8px' }}>
+                                <h3>{video.title}</h3>
+                                <p>{video.description}</p>
+                                <img 
+                                    src={video.thumbnailUrl || "https://via.placeholder.com/300"} 
+                                    alt="Thumbnail" 
+                                    width="100%" 
+                                    height="150px" 
+                                    style={{ objectFit: 'cover' }} 
+                                />
+                                <video width="100%" controls>
+                                    <source src={videoSrc} type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                        );
+                    })}
                 </div>
             )}
         </div>
