@@ -14,6 +14,8 @@ import BrandsAllList from './pages/dashboardscrees/projectinitiation/user/Brands
 import VideoAllList from './pages/dashboardscrees/projectinitiation/VideoAllList';
 import VideoList from './pages/dashboardscrees/projectinitiation/VideoList';
 import VideoallList from './pages/videos/VideoallList';
+import SortsList from './pages/videos/SortsList';
+import RequirementsList from './pages/videos/RequirementsList';
 
 const ProtectedRoute = ({ element }) => {
   const navigate = useNavigate();
@@ -44,6 +46,8 @@ function App() {
             {/* <Route path='videos' element={<VideoallList />} /> */}
             <Route path='videos' element={<VideoAllList />} />
             <Route path='sorts' element={<VideoList />} />
+            <Route path='sorts-list' element={<SortsList />} />
+            <Route path='brand-requirements' element={<RequirementsList />} />
           </Route>
         </Routes>
         <ToastContainer />

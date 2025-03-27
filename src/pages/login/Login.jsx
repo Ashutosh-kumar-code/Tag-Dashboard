@@ -24,6 +24,7 @@ const Login = () => {
       const response = await axios.post(`${API_URL}/admin/login`, { email, password });
       if (response.status === 200) {
         localStorage.setItem('tag_token', response.data.token);
+        localStorage.setItem('tag_adminId', response.data?.admin._id);
         toast.success('Login successful!');
         navigate('/dashboard');
       }

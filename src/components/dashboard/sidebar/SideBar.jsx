@@ -37,9 +37,15 @@ const SideBar = () => {
       subMenu: [
         { name: "Videos", link: "videos" },
         { name: "Sorts", link: "sorts" },
+        { name: "Sorts List", link: "sorts-list" },
       ],
     },
-   
+    {
+      name: "Requirements",
+      link: "brand-requirements",
+      icon: <Icons.home />,
+      subMenu: [],
+    },
    
 
 
@@ -90,6 +96,12 @@ const SideBar = () => {
     ));
   };
 
+  const handleLogout = () => {
+    localStorage.removeItem('tag_token');
+    localStorage.removeItem('tag_adminId');
+    window.location.href = "/login"; // Redirect to login page
+};
+
   return (
     <div className="sidebar-main-container scrollbar-hide">
       {/* Logo */}
@@ -132,7 +144,7 @@ const SideBar = () => {
         ))}
       </nav>
       {/* Footer */}
-      <div className="sidebar-logout">
+      <div className="sidebar-logout" onClick={()=> handleLogout()} >
         <span>
           <Icons.logout size={20} className="side-logout-icon" />
         </span>
