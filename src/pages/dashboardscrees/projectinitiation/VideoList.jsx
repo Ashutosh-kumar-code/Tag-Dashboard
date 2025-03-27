@@ -24,6 +24,7 @@ const VideoList = () => {
     };
 
     const handleDelete = async (videoId) => {
+        console.log("videoId=====",videoId)
         try {
             const adminId = localStorage.getItem('tag_adminId'); // Ensure you get adminId from localStorage
     
@@ -32,8 +33,7 @@ const VideoList = () => {
                 return;
             }
     
-            await axios.delete(`${API_URL}/videos/admin/delete/${videoId}`, {
-                data: { adminId }, // Correctly sending adminId in the request body
+            await axios.delete(`${API_URL}/videos/admin/delete/${videoId}?adminId=${adminId}`, {
                 headers: { "Content-Type": "application/json" } // Ensures JSON format
             });
     
@@ -44,6 +44,28 @@ const VideoList = () => {
             alert("Failed to delete video");
         }
     };
+    
+    // const handleDelete = async (videoId) => {
+    //     try {
+    //         const adminId = localStorage.getItem('tag_adminId'); // Ensure you get adminId from localStorage
+    
+    //         if (!adminId) {
+    //             alert("Admin ID not found!");
+    //             return;
+    //         }
+    
+    //         await axios.delete(`${API_URL}/videos/admin/delete/${videoId}`, {
+    //             data: { adminId }, // Correctly sending adminId in the request body
+    //             headers: { "Content-Type": "application/json" } // Ensures JSON format
+    //         });
+    
+    //         setVideos(videos.filter(video => video._id !== videoId));
+    //         alert("Video deleted successfully");
+    //     } catch (error) {
+    //         console.error("Error deleting video:", error.response?.data || error.message);
+    //         alert("Failed to delete video");
+    //     }
+    // };
     
     // const handleDelete = async (videoId) => {
     //     try {

@@ -1,9 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Icons } from "../../../icons";
 import MobileResponsiveSidebar from "../mobileviwe/MobileResposiveSideBar";
+import admin_img from "../../../assets/admin-pic.png"
 
-const Head = ({ userName = "Username" }) => {
-  const [mobileSideBar, SetMonileSidebar] = useState(false)
+const Head = () => {
+  const [mobileSideBar, SetMonileSidebar] = useState(false);
+
+  const [userName, setUserName] = useState("");
+
+  useEffect(() => {
+    // Retrieve the admin name from localStorage
+    const adminName = localStorage.getItem("tag_adminName");
+    if (adminName) {
+      setUserName(adminName);
+    }
+  }, []); // Runs only once when component mounts
+
   const handleMobSideBarPop = () =>{
     SetMonileSidebar(!mobileSideBar)
   }
@@ -20,7 +32,7 @@ const Head = ({ userName = "Username" }) => {
            <Icons.align size={20} className="mt-1"/>
       </div>&nbsp;
       <div className="">
-        Hello! <span className=" text-[#78222E]">{userName}</span>
+        Hello! <span className=" text-[#78222E]">{userName || "Admin"}</span>
         </div>
       </div>
 
@@ -41,7 +53,7 @@ const Head = ({ userName = "Username" }) => {
         {/* User Profile */}
         <div className="head-pro">
           <img
-            src="https://via.placeholder.com/150" // Replace with user's profile image URL
+            src={admin_img} // Replace with user's profile image URL
             alt="User Profile"
             className="head-pro-img"
           />

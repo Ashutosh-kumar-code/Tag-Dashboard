@@ -299,7 +299,7 @@ body{
 }
 
 .head-pro{
-  @apply w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300
+  @apply w-10 h-10 rounded-full overflow-hidden 
 }
 
 .head-pro-img{

@@ -17,15 +17,31 @@ import VideoallList from './pages/videos/VideoallList';
 import SortsList from './pages/videos/SortsList';
 import RequirementsList from './pages/videos/RequirementsList';
 
+// const ProtectedRoute = ({ element }) => {
+//   const navigate = useNavigate();
+//   useEffect(() => {
+//     if (localStorage.getItem('tag_token')) {
+//       navigate('/dashboard');
+//     }
+//     else{
+//       navigate('/login'); 
+//     }
+//   }, [navigate]);
+
+//   return element;
+// };
+
 const ProtectedRoute = ({ element }) => {
   const navigate = useNavigate();
-  useEffect(() => {
-    if (localStorage.getItem('tag_token')) {
-      navigate('/dashboard');
-    }
-  }, [navigate]);
+  const token = localStorage.getItem('tag_token');
 
-  return element;
+  useEffect(() => {
+    if (!token) {
+      navigate('/login'); // Redirect to login if no token
+    }
+  }, [token, navigate]);
+
+  return token ? element : null; // Render only if token exists
 };
 
 function App() {
@@ -39,13 +55,13 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/login' element={<ProtectedRoute element={<Login />} />} />
           <Route path='/signup' element={<ProtectedRoute element={<Signup />} />} />
-          <Route path='/dashboard' element={<MainLayout />} >
+          <Route path='/dashboard' element={<ProtectedRoute element={<MainLayout />} /> } >
             <Route index element={<Dashboard />} />
             <Route path='creators' element={<CreatorsAllList />} />
             <Route path='brands' element={<BrandsAllList />} />
             {/* <Route path='videos' element={<VideoallList />} /> */}
-            <Route path='videos' element={<VideoAllList />} />
-            <Route path='sorts' element={<VideoList />} />
+            {/* <Route path='videos' element={<VideoAllList />} /> */}
+            <Route path='videos' element={<VideoList />} />
             <Route path='sorts-list' element={<SortsList />} />
             <Route path='brand-requirements' element={<RequirementsList />} />
           </Route>

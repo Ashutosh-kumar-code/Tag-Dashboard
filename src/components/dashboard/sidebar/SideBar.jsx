@@ -35,8 +35,8 @@ const SideBar = () => {
       name: "Posts Section",
       icon: <Icons.settings />,
       subMenu: [
+        // { name: "Videos", link: "videos" },
         { name: "Videos", link: "videos" },
-        { name: "Sorts", link: "sorts" },
         { name: "Sorts List", link: "sorts-list" },
       ],
     },

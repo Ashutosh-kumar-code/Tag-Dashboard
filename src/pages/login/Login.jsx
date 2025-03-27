@@ -25,6 +25,7 @@ const Login = () => {
       if (response.status === 200) {
         localStorage.setItem('tag_token', response.data.token);
         localStorage.setItem('tag_adminId', response.data?.admin._id);
+        localStorage.setItem('tag_adminName', response.data?.admin.name);
         toast.success('Login successful!');
         navigate('/dashboard');
       }

@@ -34,23 +34,28 @@ const RequirementsList = () => {
 
     const handleDelete = async () => {
         if (!selectedRequirementId) return;
+    
         try {
             await axios.delete(`${API_URL}/requirements/delete/${selectedRequirementId}`);
+    
             setRequirements(requirements.filter(req => req._id !== selectedRequirementId));
+    
             toast.success("Requirement deleted successfully");
         } catch (error) {
-            console.error("Error deleting requirement:", error);
+            console.error("Error deleting requirement:", error.response?.data || error.message);
             toast.error("Failed to delete requirement");
         }
+    
         setShowPopup(false);
     };
+    
 
     const handleFilterChange = (e) => {
         setFilters({ ...filters, [e.target.name]: e.target.value });
     };
 
     return (
-        <div className="p-6 min-h-screen bg-gray-100">
+        <div className="p-6 min-h-screen ">
             <h1 className="list-heading">Requirement List</h1>
            
             {/* Filter Section */}
@@ -114,7 +119,7 @@ const RequirementsList = () => {
                                         <button 
                                             onClick={() => confirmDelete(req._id)} 
                                             className=" text-white px-3 py-1 rounded-md transition">
-                                          <Icons.Delete size={24} className="cursor-pointer text-red-500" onClick={() => confirmDelete(creator._id)} />
+                                          <Icons.Delete size={24} className="cursor-pointer text-red-500" onClick={() => confirmDelete(req._id)} />
                                                            
                                         </button>
                                     </td>
