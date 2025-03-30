@@ -650,3 +650,11 @@ body{
 .center-div{
   @apply flex justify-center items-center mb-6
 }
+
+@media (max-width: 576px) {
+.signup-glassmorphics-container{
+  max-width: 80%;
+  margin-top: 70px;
+}
+
+}
