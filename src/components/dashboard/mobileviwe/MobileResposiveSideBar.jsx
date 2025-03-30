@@ -24,7 +24,21 @@ const MobileResponsiveSidebar = ({ isopen, onclose }) => {
         { name: "Brands", link: "brands" },
       ],
     },
- 
+    {
+      name: "Posts Section",
+      icon: <Icons.settings />,
+      subMenu: [
+        // { name: "Videos", link: "videos" },
+        { name: "Videos", link: "videos" },
+        { name: "Sorts List", link: "sorts-list" },
+      ],
+    },
+    {
+      name: "Requirements",
+      link: "brand-requirements",
+      icon: <Icons.home />,
+      subMenu: [],
+    },
   
     
   ];
@@ -76,6 +90,12 @@ const MobileResponsiveSidebar = ({ isopen, onclose }) => {
   if (!isopen) {
     return null; // Hide sidebar when not open
   }
+
+  const handleLogout = () => {
+    localStorage.removeItem('tag_token');
+    localStorage.removeItem('tag_adminId');
+    window.location.href = "/login"; // Redirect to login page
+};
 
   return (
     <div className="fixed inset-0 z-50">
@@ -135,7 +155,7 @@ const MobileResponsiveSidebar = ({ isopen, onclose }) => {
           ))}
         </nav>
         {/* Footer */}
-        <div className="sidebar-logout">
+        <div className="sidebar-logout" onClick={()=> handleLogout()} >
           <span>
             <Icons.logout size={20} className="side-logout-icon" />
           </span>

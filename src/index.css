@@ -116,7 +116,7 @@ body{
   }
 
   .login-main-widin{
-    @apply bg-white/30 backdrop-blur-lg border p-8 rounded-3xl shadow-lg w-full sm:w-[480px]
+    @apply bg-white/30 backdrop-blur-lg border p-8 rounded-3xl shadow-lg w-[82%] sm:w-[480px]
   }
 
   .login-main-widin h2{
@@ -226,7 +226,7 @@ body{
 }
 
 .sidebar-menu{
-  @apply flex-1 pt-6 overflow-y-auto
+  @apply flex-1 pt-6 overflow-y-auto h-[82%]
 }
 
 .sidebar-parent-menu{
