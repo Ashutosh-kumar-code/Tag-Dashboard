@@ -25,7 +25,7 @@ const SideBar = () => {
     },
     {
       name: "Users",
-      icon: <Icons.settings />,
+      icon: <Icons.User />,
       subMenu: [
         { name: "Creators", link: "creators" },
         { name: "Brands", link: "brands" },
@@ -33,9 +33,8 @@ const SideBar = () => {
     },
     {
       name: "Posts Section",
-      icon: <Icons.settings />,
+      icon: <Icons.sorts_icon />,
       subMenu: [
-        // { name: "Videos", link: "videos" },
         { name: "Videos", link: "videos" },
         { name: "Sorts List", link: "sorts-list" },
       ],
@@ -43,7 +42,7 @@ const SideBar = () => {
     {
       name: "Requirements",
       link: "brand-requirements",
-      icon: <Icons.home />,
+      icon: <Icons.requirements_icon />,
       subMenu: [],
     },
    

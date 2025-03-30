@@ -80,7 +80,8 @@ body{
 /* In your CSS file (e.g., styles.css or a Tailwind CSS file) */
 .home-main {
     @apply h-screen w-full bg-cover bg-center bg-no-repeat;
-    background-image: url('./assets/house.png'); /* Replace with your static image path */
+    background-image: url('./assets/login-2.jpg'); /* Replace with your static image path */
+
   }
   
   .home-content{
@@ -108,7 +109,7 @@ body{
 
   .login-main-imgbg {
     @apply h-screen w-full bg-cover bg-center bg-no-repeat;
-    background-image: url('./assets/login.png'); /* Replace with your static image path */
+    background-image: url('./assets/login-3.jpg'); /* Replace with your static image path */
   }
 
   .login-main{
@@ -146,7 +147,7 @@ body{
 
   .signup-main-img{
     @apply min-h-screen flex items-center justify-center bg-cover bg-center;
-    background-image: url('./assets/signuphouse.png'); /* Replace with your static image path */
+    background-image: url('./assets/signup-1.jpg'); /* Replace with your static image path */
   }
 
   .signup-glassmorphics-container {

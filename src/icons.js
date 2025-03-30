@@ -41,7 +41,10 @@ import { MdDeleteOutline } from "react-icons/md";
 import { IoIosArrowBack } from "react-icons/io";
 import { GiProgression } from "react-icons/gi";
 import { AiOutlineSafetyCertificate } from "react-icons/ai";
-
+import { FaPersonBurst } from "react-icons/fa6";
+import { MdVideoSettings } from "react-icons/md";
+import { LiaPhotoVideoSolid } from "react-icons/lia";
+import { DiRequirejs } from "react-icons/di";
 
 export const Icons = {
        call:IoCall,
@@ -92,5 +95,9 @@ export const Icons = {
        progress:GiProgression,
        safety:AiOutlineSafetyCertificate,
        forward:IoIosArrowForward,
-       back:IoIosArrowBack
+       back:IoIosArrowBack,
+       brandicon : FaPersonBurst,
+       video_icon: MdVideoSettings,
+       sorts_icon : LiaPhotoVideoSolid,
+       requirements_icon : DiRequirejs
 }

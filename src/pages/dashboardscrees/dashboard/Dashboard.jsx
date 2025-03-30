@@ -11,11 +11,11 @@ const Dashboard = () => {
     <div>
       <Total />
       <div className=' flex flex-wrap justify-between'>
-        {/* <BarChart /> */}
-        {/* <DoughnutChart /> */}
-        <div className=' w-full mt-6'>
+        <BarChart />
+        <DoughnutChart />
+        {/* <div className=' w-full mt-6'>
           <DashboardProjectList />
-        </div>
+        </div> */}
      
        
       </div>

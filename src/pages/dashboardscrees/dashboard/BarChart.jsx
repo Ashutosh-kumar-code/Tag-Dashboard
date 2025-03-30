@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   Chart as ChartJS,
   BarElement,
@@ -9,79 +9,75 @@ import {
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
 
-// Register required components
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const BarChart = () => {
-  const data = {
-    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'], // X-axis labels
+  const [chartData, setChartData] = useState({
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
     datasets: [
       {
-        label: 'Revenue',
-        data: [5000, 7000, 8000, 6000, 9000, 10000, 11000],
-        backgroundColor: '#78222E', // Revenue bar color
+        label: 'Brands',
+        data: Array(12).fill(0), // Initial empty data
+        backgroundColor: '#78222E',
         borderWidth: 1,
-        borderRadius: 10, // Rounded top edges
-        barThickness: 20, // Set specific bar width
+        borderRadius: 10,
+        barThickness: 20,
       },
       {
-        label: 'Expenses',  
-        data: [3000, 5000, 4000, 3000, 7000, 8000, 9000],
-        backgroundColor: '#EDEDED', // Profit bar color
+        label: 'Creators',
+        data: Array(12).fill(0), // Initial empty data
+        backgroundColor: '#EDEDED',
         borderWidth: 1,
-        borderRadius: 10, // Rounded top edges
-        barThickness: 20, // Set specific bar width
+        borderRadius: 10,
+        barThickness: 20,
       },
     ],
-  };
+  });
+
+  useEffect(() => {
+    fetch('http://localhost:5000/api/auth/all-registrations-graph') // Adjust API URL if needed
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.success) {
+          const brandCounts = data.data.map((item) => item.brands);
+          const creatorCounts = data.data.map((item) => item.creators);
+
+          setChartData((prevData) => ({
+            ...prevData,
+            datasets: [
+              { ...prevData.datasets[0], data: brandCounts },
+              { ...prevData.datasets[1], data: creatorCounts },
+            ],
+          }));
+        }
+      })
+      .catch((error) => console.error('Error fetching registration data:', error));
+  }, []);
 
   const options = {
     responsive: true,
     plugins: {
-      legend: {
-        display: true,
-        position: 'top',
-      },
-      tooltip: {
-        enabled: true, // Keep tooltips for interactivity
-      },
+      legend: { display: true, position: 'top' },
+      tooltip: { enabled: true },
     },
     scales: {
       y: {
         beginAtZero: true,
-        grid: {
-          display: false, // Disable horizontal grid lines
-        },
-        title: {
-          display: true,
-          // text: 'Values ($)',
-        },
+        grid: { display: false },
       },
       x: {
-        grid: {
-          display: false, // Disable vertical grid lines
-          
-        },
-        title: {
-          display: true,
-          // text: 'Months',
-        },
+        grid: { display: false },
         barPercentage: 0.8,
         categoryPercentage: 0.7,
       },
     },
   };
 
-  return (<>
-    <div  className='lg:w-[700px] md:w-[450px]  sm:w-[550px] w-60 lg:h-[370px] mt-6 shadow-lg rounded-lg res-640-hidden'> 
-    <h1 className=' text-xl font-bold px-6'>Cash Flow</h1>
-      <Bar data={data} options={options}/>
+  return (
+    <div className='lg:w-[700px] md:w-[450px] sm:w-[550px] w-60  mt-6 shadow-lg rounded-lg'>
+      <h1 className='text-xl font-bold px-6'>Monthly Registrations</h1>
+      <Bar data={chartData} options={options} />
     </div>
-    <div  className='w-[350px] sm:hidden block '> 
-    <h1 className=' text-xl font-semibold px-6'>Cash Flow</h1>
-      <Bar data={data} options={options}/>
-    </div>
-    </>
   );
 };
 
