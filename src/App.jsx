@@ -53,9 +53,9 @@ function App() {
         {pathname.includes('/dashboard') || <Header />}
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<ProtectedRoute element={<Login />} />} />
-          <Route path='/signup' element={<ProtectedRoute element={<Signup />} />} />
-          <Route path='/dashboard' element={<ProtectedRoute element={<MainLayout />} /> } >
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/dashboard' element={<MainLayout />} >
             <Route index element={<Dashboard />} />
             <Route path='creators' element={<CreatorsAllList />} />
             <Route path='brands' element={<BrandsAllList />} />
