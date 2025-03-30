@@ -44,7 +44,7 @@ const Total = () => {
               <span className="total-value-text">Total Creators</span>
             </span>
             <span className="total-icon">
-              <Icons.Chart size={30} />
+              <Icons.creator_icon size={30} />
             </span>
           </div>
 

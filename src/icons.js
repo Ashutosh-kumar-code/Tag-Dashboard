@@ -45,6 +45,7 @@ import { FaPersonBurst } from "react-icons/fa6";
 import { MdVideoSettings } from "react-icons/md";
 import { LiaPhotoVideoSolid } from "react-icons/lia";
 import { DiRequirejs } from "react-icons/di";
+import { GiMinotaur } from "react-icons/gi";
 
 export const Icons = {
        call:IoCall,
@@ -99,5 +100,6 @@ export const Icons = {
        brandicon : FaPersonBurst,
        video_icon: MdVideoSettings,
        sorts_icon : LiaPhotoVideoSolid,
-       requirements_icon : DiRequirejs
+       requirements_icon : DiRequirejs,
+       creator_icon: GiMinotaur
 }
