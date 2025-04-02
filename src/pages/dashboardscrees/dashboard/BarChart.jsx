@@ -8,6 +8,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { API_URL } from '../../../config';
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
@@ -35,7 +36,7 @@ const BarChart = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/auth/all-registrations-graph') // Adjust API URL if needed
+    fetch(`${API_URL}/auth/all-registrations-graph`) // Adjust API URL if needed
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {

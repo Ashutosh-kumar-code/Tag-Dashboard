@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
+import { API_URL } from '../../../config';
 
 // Register Chart.js elements
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -17,7 +18,7 @@ const DoughnutChart = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/auth/user-counts') // Adjust API URL if needed
+    fetch(`${API_URL}/auth/user-counts`) // Adjust API URL if needed
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Icons } from '../../../icons';
+import { API_URL } from '../../../config';
 
 const Total = () => {
   const [stats, setStats] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('http://localhost:5000/api/auth/total-stats') // Adjust API URL if needed
+    fetch(`${API_URL}/auth/total-stats`) // Adjust API URL if needed
       .then((response) => response.json())
       .then((data) => {
         if (data.success) {
