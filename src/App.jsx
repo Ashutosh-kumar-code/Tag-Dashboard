@@ -6,14 +6,12 @@ import Login from './pages/login/Login';
 import Signup from './pages/signup/Signup';
 import MainLayout from './components/dashboard/mainlayout/MainLayout';
 import Dashboard from './pages/dashboardscrees/dashboard/Dashboard';
-// import UserList from './pages/dashboardscrees/projectinitiation/user/UserList';
 import { ToastContainer } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import CreatorsAllList from './pages/dashboardscrees/projectinitiation/CreatorsAllList';
 import BrandsAllList from './pages/dashboardscrees/projectinitiation/user/BrandsAllList';
-import VideoAllList from './pages/dashboardscrees/projectinitiation/VideoAllList';
+import VideoUpload from './pages/dashboardscrees/projectinitiation/VideoUpload';
 import VideoList from './pages/dashboardscrees/projectinitiation/VideoList';
-import VideoallList from './pages/videos/VideoallList';
 import SortsList from './pages/videos/SortsList';
 import RequirementsList from './pages/videos/RequirementsList';
 
@@ -59,9 +57,9 @@ function App() {
             <Route index element={<Dashboard />} />
             <Route path='creators' element={<CreatorsAllList />} />
             <Route path='brands' element={<BrandsAllList />} />
-            {/* <Route path='videos' element={<VideoallList />} /> */}
-            {/* <Route path='videos' element={<VideoAllList />} /> */}
-            <Route path='videos' element={<VideoList />} />
+            <Route path='videos-upload' element={<VideoUpload />} />
+
+            <Route path='videos-list' element={<VideoList />} />
             <Route path='sorts-list' element={<SortsList />} />
             <Route path='brand-requirements' element={<RequirementsList />} />
           </Route>

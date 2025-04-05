@@ -5,7 +5,7 @@ import { API_URL } from '../../config';
 const SortsList = () => {
     const [videos, setVideos] = useState([]);
     const [loading, setLoading] = useState(true);
-    const [filters, setFilters] = useState({ category: '', title: '', type: 'video' });
+    const [filters, setFilters] = useState({ category: '', title: '', type: 'short' });
     const [sortBy, setSortBy] = useState('date');
 
     useEffect(() => {
@@ -14,7 +14,7 @@ const SortsList = () => {
 
     const fetchVideos = async () => {
         try {
-            const response = await axios.get(`${API_URL}/videos/list`, { params: filters });
+            const response = await axios.post(`${API_URL}/videos/list`,filters);
             let sortedVideos = response.data;
             if (sortBy === 'title') {
                 sortedVideos = sortedVideos.sort((a, b) => a.title.localeCompare(b.title));
@@ -54,7 +54,7 @@ const SortsList = () => {
 
     return (
         <div className="p-6 min-h-screen bg-gray-100">
-            <h2 className="text-3xl font-bold text-center text-red-700 mb-6">All Uploaded Videos</h2>
+            <h2 className="text-3xl font-bold text-center text-red-700 mb-6">All Uploaded Sorts</h2>
             
             <div className="flex flex-wrap gap-4 justify-center mb-6">
                 <input 
@@ -99,7 +99,7 @@ const SortsList = () => {
                             <div 
                                 key={video._id} 
                                 className="bg-white border border-gray-200 p-4 rounded-lg shadow-lg hover:shadow-xl transition">
-                                <video className="w-full h-64 rounded-md" controls>
+                                <video className="w-full rounded-md" style={{ width: '100%', height: '165px'}} controls>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
@@ -107,7 +107,7 @@ const SortsList = () => {
                                 <p className="text-gray-600">{video.description}</p>
                                 <button 
                                     onClick={() => handleDelete(video._id)} 
-                                    className="mt-4 px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-800 transition">
+                                    className="mt-4 px-4 py-2 w-full bg-red-600 text-white rounded-md hover:bg-red-800 transition">
                                     Delete Video
                                 </button>
                             </div>

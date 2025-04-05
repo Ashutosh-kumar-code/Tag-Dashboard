@@ -14,7 +14,8 @@ const VideoList = () => {
 
     const fetchVideos = async () => {
         try {
-            const response = await axios.get(`${API_URL}/videos/list`, { params: filters });
+            console.log("filters======",filters)
+            const response = await axios.post(`${API_URL}/videos/list`, filters);
             setVideos(response.data);
             setLoading(false);
         } catch (error) {
@@ -133,6 +134,7 @@ const VideoList = () => {
                             <div 
                                 key={video._id} 
                                 style={{ 
+                                    maxWidth: '320px',
                                     border: '1px solid #ddd', 
                                     padding: '10px', 
                                     borderRadius: '8px', 
@@ -142,7 +144,7 @@ const VideoList = () => {
                                 }}
                                 onMouseEnter={(e) => e.currentTarget.style.boxShadow = '0px 6px 12px rgba(120, 34, 46, 0.5)'}
                                 onMouseLeave={(e) => e.currentTarget.style.boxShadow = '0px 4px 10px rgba(120, 34, 46, 0.3)'}>
-                                <video width="100%" controls>
+                                <video width="100%" style={{ width: '100%', height: '145px'}} controls>
                                     <source src={videoSrc} type="video/mp4" />
                                     Your browser does not support the video tag.
                                 </video>
@@ -158,7 +160,8 @@ const VideoList = () => {
                                         borderRadius: '5px', 
                                         cursor: 'pointer',
                                         transition: '0.3s',
-                                        marginTop: '10px' 
+                                        marginTop: '10px',
+                                        width: '100%' 
                                     }}
                                     onMouseEnter={(e) => e.target.style.backgroundColor = '#b30000'}
                                     onMouseLeave={(e) => e.target.style.backgroundColor = 'red'}>
