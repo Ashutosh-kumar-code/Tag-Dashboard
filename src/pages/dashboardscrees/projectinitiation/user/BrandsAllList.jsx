@@ -37,7 +37,7 @@ const BrandsAllList = () => {
     if (!selectedBrandId) return;
 
     try {
-      await axios.delete(`${API_URL}/delete-user/${selectedBrandId}`);
+      await axios.delete(`${API_URL}/admin/delete-user/${selectedBrandId}`);
       setBrands(brands.filter((brand) => brand._id !== selectedBrandId));
       toast.success("Brand deleted successfully!");
     } catch (error) {

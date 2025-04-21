@@ -39,7 +39,7 @@ console.log("response======",response)
     if (!selectedUserId) return;
 
     try {
-      await axios.delete(`${API_URL}/delete-user/${selectedUserId}`);
+      await axios.delete(`${API_URL}/admin/delete-user/${selectedUserId}`);
       setCreators(creators.filter((creator) => creator._id !== selectedUserId));
       toast.success("User deleted successfully!");
     } catch (error) {
