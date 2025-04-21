@@ -36,8 +36,8 @@ const SortsList = () => {
                 alert("Admin ID not found!");
                 return;
             }
-            await axios.delete(`${API_URL}/videos/admin/delete/${videoId}`, {
-                data: { adminId },
+            await axios.delete(`${API_URL}/videos/admin/delete/${videoId}?adminId=${adminId}`, {
+                // data: { adminId },
                 headers: { "Content-Type": "application/json" }
             });
             setVideos(videos.filter(video => video._id !== videoId));
